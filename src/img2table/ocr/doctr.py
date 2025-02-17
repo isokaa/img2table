@@ -29,6 +29,8 @@ class DocTR(OCRInstance):
         kw = kw or {}
         kw["detect_language"] = detect_language
         kw["pretrained"] = kw.get("pretrained") if kw.get("pretrained") is not None else True
+        kw["reco_arch"] = kw.get("reco_arch") if kw.get("reco_arch") is not None else "vitstr_base"
+        kw["det_arch"] = kw.get("det_arch") if kw.get("det_arch") is not None else "db_resnet50"
 
         self.model = ocr_predictor(**kw)
 
